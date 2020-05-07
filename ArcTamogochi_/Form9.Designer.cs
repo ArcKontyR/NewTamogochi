@@ -87,11 +87,14 @@
             this.Controls.Add(this.lblEvent);
             this.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Name = "formEvent";
-            this.Text = "Form9";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Событие";
             this.Load += new System.EventHandler(this.formEvent_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formEvent_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formEvent_MouseMove);
             this.ResumeLayout(false);
             this.PerformLayout();
 

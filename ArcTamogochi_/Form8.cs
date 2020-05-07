@@ -17,6 +17,8 @@ namespace ArcTamogochi_
             InitializeComponent();
         }
 
+        Point lastPointGame;
+
         private void formStats_Load(object sender, EventArgs e)
         {
             formMain Main = Owner as formMain;
@@ -56,6 +58,20 @@ namespace ArcTamogochi_
         private void lblClose_MouseLeave(object sender, EventArgs e)
         {
             lblClose.ForeColor = Color.White;
+        }
+
+        private void formStats_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPointGame = new Point(e.X, e.Y);
+        }
+
+        private void formStats_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPointGame.X;
+                this.Top += e.Y - lastPointGame.Y;
+            }
         }
     }
 }

@@ -84,6 +84,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form8";
             this.Load += new System.EventHandler(this.formStats_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formStats_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formStats_MouseMove);
             this.ResumeLayout(false);
             this.PerformLayout();
 

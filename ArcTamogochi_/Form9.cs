@@ -17,6 +17,8 @@ namespace ArcTamogochi_
             InitializeComponent();
         }
 
+        Point lastPointGame;
+
         string[] events = new string[10] 
         { "Ваш питомец врезался в стену, пока бегал по коридору. \nЗдоровье -10",
           "Ваш питомец съел муху. \nСытость +1 \nНастроение +10",
@@ -205,6 +207,20 @@ namespace ArcTamogochi_
                     Main.frameUpdate();
                     Main.saveProgress();
                     break;
+            }
+        }
+
+        private void formEvent_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPointGame = new Point(e.X, e.Y);
+        }
+
+        private void formEvent_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPointGame.X;
+                this.Top += e.Y - lastPointGame.Y;
             }
         }
     }
