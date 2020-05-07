@@ -19,7 +19,7 @@ namespace ArcTamogochi_
             InitializeComponent();
 
         }
-
+         //for git test
         Point lastPointGame;
         public byte workTimeWashingFloors;
         public byte workTimeGluePaper;
